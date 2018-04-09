@@ -1,11 +1,11 @@
 <table class="table table-striped">
     <tr>
-        <th>Exchange Number</th>
-        <th>Price per unit (EUR)</th>
-        <th>Ammount</th>
-        <th>Time remaining</th>
+        <th ng-click="setOrder('ID')">Exchange Number</th>
+        <th ng-click="setOrder('inputValue')">Price per unit (EUR)</th>
+        <th ng-click="setOrder('outputValue')">Ammount</th>
+        <th ng-click="setOrder('experationTime')">Time remaining</th>
     </tr>
-    <tr ng-repeat="exchange in $ctrl.exchangeHistory">
+    <tr ng-repeat="exchange in $ctrl.exchangeHistory | orderBy: $ctrl.orderProp : $ctrl.orderReverse">
         <td>{{exchange.ID}}</td>
         <td>{{exchange.inputValue.toFixed(2)}}</td>
         <td>{{exchange.outputValue}}</td>

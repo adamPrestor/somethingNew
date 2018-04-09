@@ -37,8 +37,8 @@ angular.
         
         //reset values, like nothing happen
         self.iterator = history.incrementIterator();
-        self.exchangeInput = 0.00;
-        self.exchangeOutput = 1;
+        self.exchangePrice = 0.00;
+        self.exchangeAmmount = 1;
         self.timeOut = {
           hour: 23,
           minute: 59,

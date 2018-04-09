@@ -6,6 +6,8 @@ angular.
         var self = this;
         self.exchangeHistory = history.getProperty();
         self.now = Date.now();
+        self.orderProp = 'experationTime';
+        self.orderReverse = false;
       
         $scope.onTimeout = function(){
             self.now += 1000;
@@ -23,6 +25,15 @@ angular.
             return remainingH+":"+remainingM+":"+remainingS;
         };
         
-        self.formatNumber = function(number) { return ("0" + number).slice(-2); }
+        self.formatNumber = function(number) { return ("0" + number).slice(-2); };
+        
+        $scope.setOrder = function(name) {
+            if(self.orderProp == name) {
+                self.orderReverse = !self.orderReverse;
+            } else {
+                self.orderReverse = false;
+                self.orderProp = name;    
+            }
+        };
     }
   });

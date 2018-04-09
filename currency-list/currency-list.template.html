@@ -23,7 +23,6 @@
       <select class="timeSelect" ng-model="$ctrl.timeOut.second" ng-options="i for i in [] | range:60" ></select> s
     </p>
   </div>
-  <p> {{$ctrl.exchangePrice * $ctrl.selectedCurr.value}} </p>
   <div class="row">
     <p>
       <button class="btn btn-primary" type="submit" style="display:inline-block;" ng-click="onSubmit()">Submit</button>
