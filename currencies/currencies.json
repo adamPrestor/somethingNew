@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Euro",
+        "code": "EUR",
+        "value": 1.00,
+        "step": 0.01,
+        "ID": 0
+    },
+    {
+        "name": "U.S. Dolar",
+        "code": "USD",
+        "value": 0.97,
+        "step": 0.01,
+        "ID": 1
+    },
+    {
+        "name": "PoundSterling",
+        "code": "BGP",
+        "value": 1.06,
+        "step": 0.01,
+        "ID": 2
+    },
+    {
+        "name": "JapaneseYen",
+        "code": "JPY",
+        "value": 0.85,
+        "step": 0.01,
+        "ID": 3
+    }
+]

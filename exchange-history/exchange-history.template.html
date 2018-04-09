@@ -1,0 +1,18 @@
+<table class="table table-striped">
+    <tr>
+        <th>Exchange Number</th>
+        <th>Price per unit (EUR)</th>
+        <th>Ammount</th>
+        <th>Time remaining</th>
+    </tr>
+    <tr ng-repeat="exchange in $ctrl.exchangeHistory">
+        <td>{{exchange.ID}}</td>
+        <td>{{exchange.inputValue.toFixed(2)}}</td>
+        <td>{{exchange.outputValue}}</td>
+        <td>{{$ctrl.getTimeRemaining(exchange.experationTime, $ctrl.now)}}</td>
+    </tr>
+</table>
+
+<a href="#!/home">
+    <button class="btn btn-info" type="submit" style="display:inline-block;">Back</button>    
+</a>

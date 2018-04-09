@@ -1,0 +1,29 @@
+body {
+    padding: 30px;
+}
+
+.label1 {
+    width: 120px;
+    text-align: right;
+    margin-right: 5px;
+}
+
+.input1 {
+    width: 150px;
+    height: 30px;
+    text-align: left !important;
+    padding-left: 10px;
+    border-radius: 8px;
+}
+
+.currency {
+    height: 30px;
+    width: 60px;
+    border-radius: 8px;
+}
+
+.timeSelect {
+    height: 25px;
+    width: 50px;
+    border-radius: 8px;
+}
