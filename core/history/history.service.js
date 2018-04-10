@@ -1,7 +1,7 @@
 angular.module('history', [])
     .service('history', function () {
+        //here is saved everything we need for history table to work
         var exchangeHistory = (temp = JSON.parse(localStorage.getItem("history"))) == null ? [] : temp;
-
         var order = {
             prop: 'expirationTime',
             reverse: false
@@ -13,7 +13,7 @@ angular.module('history', [])
             },
             setExchangeHistory:function (value) {
                 exchangeHistory = value;
-                localStorage.setItem("history", JSON.stringify(exchangeHistory));
+                localStorage.setItem("history", angular.toJson(exchangeHistory));
             },
             getOrderProp: function () {
                 return order.prop;

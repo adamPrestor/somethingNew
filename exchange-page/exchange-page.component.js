@@ -19,7 +19,7 @@ angular.
         minute: 59,
         second: 59
       };
-      self.history = history.getExchangeHistory();
+      self.exchangeHistory = history.getExchangeHistory();
       
       $scope.onSubmit = function () {
         //prepare a limited exchange
@@ -30,8 +30,8 @@ angular.
         temp.ID = self.iterator;
         
         //save the new limited exchange
-        self.history.push(temp);
-        history.setExchangeHistory(self.history);
+        self.exchangeHistory.push(temp);
+        history.setExchangeHistory(self.exchangeHistory);
         
         //assume it came through correctly - no error handling
         alert("Submited successfully");
