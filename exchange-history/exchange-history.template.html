@@ -1,15 +1,17 @@
 <table class="table table-striped">
     <tr>
-        <th ng-click="setOrder('ID')">Exchange Number</th>
-        <th ng-click="setOrder('inputValue')">Price per unit (EUR)</th>
-        <th ng-click="setOrder('outputValue')">Ammount</th>
-        <th ng-click="setOrder('experationTime')">Time remaining</th>
+        <th ng-click="setOrder('ID')" class="noselect">Exchange Number<i ng-class="getOrderIcon('ID')"></i></th>
+        <th ng-click="setOrder('exchangePrice')" class="noselect">Price per unit (EUR)<i ng-class="getOrderIcon('exchangePrice')"></i></th>
+        <th ng-click="setOrder('exchangeAmmount')" class="noselect">Ammount<i ng-class="getOrderIcon('exchangeAmmount')"></i></th>
+        <th ng-click="setOrder('expirationTime')" class="noselect">Time remaining<i ng-class="getOrderIcon('expirationTime')"></i></th>
+        <th></th>
     </tr>
     <tr ng-repeat="exchange in $ctrl.exchangeHistory | orderBy: $ctrl.orderProp : $ctrl.orderReverse">
         <td>{{exchange.ID}}</td>
-        <td>{{exchange.inputValue.toFixed(2)}}</td>
-        <td>{{exchange.outputValue}}</td>
-        <td>{{$ctrl.getTimeRemaining(exchange.experationTime, $ctrl.now)}}</td>
+        <td>{{exchange.exchangePrice.toFixed(2)}}</td>
+        <td>{{exchange.exchangeAmmount}}</td>
+        <td>{{$ctrl.getTimeRemaining(exchange.expirationTime, $ctrl.now, exchange.ID)}}</td>
+        <td><button ng-click="cancelOrder(exchange.ID)" class="btn btn-danger btn-sm">Cancel</button> </td>
     </tr>
 </table>
 

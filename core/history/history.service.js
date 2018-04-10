@@ -1,23 +1,38 @@
 angular.module('history', [])
     .service('history', function () {
-        var property = [];
-        var iterator = 0;
+        var exchangeHistory = (temp = JSON.parse(localStorage.getItem("history"))) == null ? [] : temp;
+
+        var order = {
+            prop: 'expirationTime',
+            reverse: false
+        };
 
         return {
-            getProperty:function () {
-                return property;
+            getExchangeHistory:function () {
+                return exchangeHistory;
             },
-            setProperty:function (value) {
-                property = value;
+            setExchangeHistory:function (value) {
+                exchangeHistory = value;
+                localStorage.setItem("history", JSON.stringify(exchangeHistory));
             },
-            getIterator:function() {
-                return iterator;
+            getOrderProp: function () {
+                return order.prop;
             },
-            incrementIterator: function() {
-                return ++iterator;
+            setOrderProp: function (value) {
+                order.prop = value;
             },
-            formatNumber: function(number) {
-                return ("0" + number).slice(-2);
+            getOrderReverse: function () {
+                return order.reverse;
+            },
+            setOrderReverse: function (value) {
+                order.reverse = value;
+            },
+            getOrder: function () {
+                return order;
+            },
+            setOrder: function (property, ascend) {
+                order.prop = property;
+                order.reverse = ascend;
             }
         };
     });

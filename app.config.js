@@ -6,7 +6,7 @@ angular.
         
             $routeProvider.
                 when('/home', {
-                  template: '<currency-list></currency-list>'
+                  template: '<exchange-page></exchange-page>'
                 }).
                 when('/history', {
                   template: '<exchange-history></exchange-history>'

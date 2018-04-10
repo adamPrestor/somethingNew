@@ -1,0 +1,34 @@
+<div class="fluid-container">
+  <div class="row">
+    <p>
+      <label for="inputNumber" class="label1">
+        Price per unit: 
+      </label>
+      <input id="inputNumber" class="input1" type="number" name="Input" step="{{$ctrl.selectedCurr.step}}" min=0 ng-model="$ctrl.exchangePrice" />
+      <select class="currency" ng-model="$ctrl.selectedCurr" ng-options="currency.code for currency in $ctrl.currencies">
+      </select>
+    </p>
+    <p>
+      <label for="outputNumber" class="label1">
+        Ammount:
+      </label>
+      <input id="outputNumber" class="input1" type="number" name="Output" step="1" min=1 ng-model="$ctrl.exchangeAmmount" />
+    </p>
+    <p>
+      <label class="label1">
+        Expires in:
+      </label>
+      <select class="time-select" ng-model="$ctrl.timeOut.hour" ng-options="i for i in [] | range:24" ></select> H
+      <select class="time-select" ng-model="$ctrl.timeOut.minute" ng-options="i for i in [] | range:60" ></select> min
+      <select class="time-select" ng-model="$ctrl.timeOut.second" ng-options="i for i in [] | range:60" ></select> s
+    </p>
+  </div>
+  <div class="row">
+    <p>
+      <button class="btn btn-primary" type="submit" style="display:inline-block;" ng-click="onSubmit()">Submit</button>
+      <a href="#!/history">
+        <button class="btn btn-info" type="submit" style="display:inline-block;">Order book</button>  
+      </a>
+    </p>
+  </div>
+</div>

@@ -22,8 +22,22 @@ body {
     border-radius: 8px;
 }
 
-.timeSelect {
+.time-select {
     height: 25px;
     width: 50px;
     border-radius: 8px;
+}
+
+.filter-selected {
+    color: rgb(255,0,0);
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
 }
